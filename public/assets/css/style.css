@@ -135,6 +135,23 @@ h6 {
 #header .logo img {
   max-height: 40px;
 }
+#header .logo2 {
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+#header .logo2 a {
+  color: black;
+}
+
+#header .logo2 img {
+  max-height: 40px;
+}
 
 /*--------------------------------------------------------------
 # Navigation Menu

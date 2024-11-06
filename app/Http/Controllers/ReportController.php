@@ -13,6 +13,12 @@ class ReportController extends Controller
         return view('reports.index', compact('reports'));
     }
 
+    public function show($id)
+    {
+        $report = Report::findOrFail($id);  
+        return view('reports.show', compact('report'));
+    }
+
     public function create()
     {
         $reports = Report::all();

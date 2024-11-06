@@ -30,6 +30,7 @@ Route::middleware('auth')->group(function () {
 
     // Compte rendu
     Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
+    Route::get('/reports/{report}', [ReportController::class, 'show'])->name('reports.show');
     Route::get('/reports/create', [ReportController::class, 'create'])->name('reports.create');
     Route::post('/reports/store', [ReportController::class, 'store'])->name('reports.store');
     Route::get('/reports/{report}/edit', [ReportController::class, 'edit'])->name('reports.edit');

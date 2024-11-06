@@ -36,6 +36,7 @@
                             <label for="racism" class="font-bold text-gray-700" x-text="`Racism : ` + racism"></label>
                             <input type="range" min="1" name="racism" max="100" x-model="racism"
                                 class="w-full h-2 bg-blue-100 appearance-none" />
+                            <span class="text-sm text-gray-500">Score de racisme, de 1 à 100</span>
                         </div>
 
                         <!-- Sexisme -->
@@ -43,6 +44,7 @@
                             <label for="sexisme" class="font-bold text-gray-700" x-text="`Sexisme : ` + sexisme"></label>
                             <input type="range" min="1" name="sexism" max="100" x-model="sexisme" :value="sexisme"
                                 class="w-full h-2 bg-blue-100 appearance-none" />
+                            <span class="text-sm text-gray-500">Score de sexisme, de 1 à 100</span>
                         </div>
 
                         <!-- Homophobie -->
@@ -50,6 +52,7 @@
                             <label for="homophobie" class="font-bold text-gray-700" x-text="`Homophobie : ` + homophobie"></label>
                             <input type="range" min="1" name="homophobia" max="100" x-model="homophobie" :value="homophobie"
                                 class="w-full h-2 bg-blue-100 appearance-none" />
+                            <span class="text-sm text-gray-500">Score d'homophobie, de 1 à 100</span>
                         </div>
 
                         <!-- Islamophobie -->
@@ -57,6 +60,7 @@
                             <label for="islamophobie" class="font-bold text-gray-700" x-text="`Islamophobie : ` + islamophobie"></label>
                             <input type="range" min="1" name="islamophobia" max="100" x-model="islamophobie" :value="islamophobie"
                                 class="w-full h-2 bg-blue-100 appearance-none" />
+                            <span class="text-sm text-gray-500">Score d'islamophobie, de 1 à 100</span>
                         </div>
 
                         <!-- Antisemtisime -->
@@ -64,6 +68,7 @@
                             <label for="antisemitisme" class="font-bold text-gray-700" x-text="`Antisémitisme : ` + antisemitisme"></label>
                             <input type="range" min="1" name="antisemitism" max="100" x-model="antisemitisme" :value="antisemitisme"
                                 class="w-full h-2 bg-blue-100 appearance-none" />
+                            <span class="text-sm text-gray-500">Score d'antisemitisme, de 1 à 100</span>
                         </div>
 
 

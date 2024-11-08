@@ -9,14 +9,14 @@
                         <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
                     </a>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="hidden space-x-6 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('reports.index')" :active="request()->routeIs('reports.index')">
                         {{ __('Comptes rendus') }}
                     </x-nav-link>
                     <div class="hidden sm:flex sm:items-center">
                         <x-dropdown>
                             <x-slot name="trigger">
-                                <button class="inline-flex items-center py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
+                                <button class="inline-flex items-center py-2 text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150 border-0">
                                     <div>Faire une demande</div>
                                     <div class="ml-1">
                                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -25,17 +25,26 @@
                                     </div>
                                 </button>
                             </x-slot>
-
                             <x-slot name="content">
                                 <x-dropdown-link :href="route('demandes.create')">
                                     {{ __('Personnelle') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link :href="route('demandes.index')">
-                                    {{ __('Entreprise') }}
-                                </x-dropdown-link>
+                                @if ( Auth::user()->role === 3)
+                                    <x-dropdown-link :href="route('demandes.create')">
+                                        {{ __('Entreprise') }}
+                                    </x-dropdown-link>
+                                @endif
                             </x-slot>
                         </x-dropdown>
                     </div>
+                    <x-nav-link :href="route('offers')" :active="request()->routeIs('offers')">
+                        {{ __('Nos offres') }}
+                    </x-nav-link>
+                    @if ( Auth::user()->role === 2 || Auth::user()->role === 3)
+                        <x-nav-link :href="route('personal-test.form')" :active="request()->routeIs('personal-test.form')">
+                            {{ __('Vos analyses') }}
+                        </x-nav-link>
+                    @endif
                 </div>
             </div>
 
@@ -53,10 +62,9 @@
                             </div>
                         </button>
                     </x-slot>
-
                     <x-slot name="content">
                         <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
+                            {{ __('Profile') }}  {{ Auth::user()->role == 1 ? 'Standard' : (Auth::user()->role == 2 ? 'Premium' : (Auth::user()->role == 3 ? 'Entreprise' : 'Rôle inconnu')) }}
                         </x-dropdown-link>
                         <x-dropdown-link :href="route('demandes.index')">
                             {{ __('Mes demandes') }}

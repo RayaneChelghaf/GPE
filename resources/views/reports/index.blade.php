@@ -1,6 +1,21 @@
 <x-app-layout>
+    @if(session('success'))
+        <div class="alert alert-success fade-in text-center" id="flash-message" style="background: linear-gradient(45deg, #4CAF50, #81C784); color: white; padding: 15px; border-radius: 5px; font-size: 16px;">
+            {{ session('success') }}
+        </div>
+
+        <script>
+            // Faire disparaître le message après 5 secondes
+            setTimeout(function() {
+                var flashMessage = document.getElementById('flash-message');
+                if (flashMessage) {
+                    flashMessage.style.opacity = 0;  // Transition pour faire disparaître le message
+                    flashMessage.style.transition = "opacity 1s";  // Durée de la transition
+                }
+            }, 5000); // 5 secondes avant de commencer la disparition
+        </script>
+    @endif
     <p class="text-center text-2xl pt-6 pb-2 font-semibold">Liste des comptes rendus</p>
-    
     <div class="flex justify-center pb-4">
     </div>
 
@@ -52,6 +67,9 @@
                                         </svg>
                                     </button>
                                     <div id="dropdownDotsHorizontal{{ $report->id }}" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                                        <div class="pt-1">
+                                            <a href="{{ route('reports.show', $report) }}" class="text-left block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white w-full focus:outline-none focus:ring focus:ring-opacity-50 no-underline">Consulter</a>
+                                        </div>
                                         <div class="pt-1">
                                             <a href="{{ route('reports.edit', $report) }}" class="text-left block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white w-full focus:outline-none focus:ring focus:ring-opacity-50 no-underline">Modifier</a>
                                         </div>

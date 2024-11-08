@@ -159,7 +159,7 @@
                   <li class="na"><i class="bx bx-x"></i> <span>Testez avec vos propres données</span></li>
                   <li class="na"><i class="bx bx-x"></i> <span>Ayez des retours et des correctifs de vos systèmes d'IA</span></li>
                 </ul>
-                <a href="{{ route('charge.store') }}" class="buy-btn">Commencez</a>
+                <a href="{{ route('reports.index') }}" class="buy-btn">Commencez</a>
               </div>
             </div>
   
@@ -174,8 +174,12 @@
                   <li><i class="bx bx-check"></i> Testez avec vos propres données</li>
                   <li class="na"><i class="bx bx-x"></i> <span>Ayez des retours et des correctifs de vos systèmes d'IA</span></li>
                 </ul>
-                <a href="{{ route('charge.store') }}" class="buy-btn">Commencez</a>
-
+                  <form action="{{ route('payment.redirect', ['amount' => 900]) }}" method="GET">
+                    <input type="hidden" name="role" value="2">
+                    <button type="submit" class="buy-btn">
+                        Commencez
+                    </button>
+                </form>
               </div>
             </div>
   
@@ -190,7 +194,12 @@
                   <li><i class="bx bx-check"></i> Testez avec vos propres données</li>
                   <li><i class="bx bx-check"></i> Ayez des retours et des correctifs de vos systèmes d'IA</li>
                 </ul>
-                <a href="{{ route('charge.store') }}" class="buy-btn">Commencez</a>
+                  <form action="{{ route('payment.redirect', ['amount' => 2900]) }}" method="GET">
+                    <input type="hidden" name="role" value="3">
+                    <button type="submit" class="buy-btn">
+                        Commencez
+                    </button>
+                </form>
               </div>
             </div>
           </div>

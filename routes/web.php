@@ -44,7 +44,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/demandes/{demande}/edit', [DemandeController::class, 'edit'])->name('demandes.edit');
     Route::put('/demandes/{demande}', [DemandeController::class, 'update'])->name('demandes.update');
     Route::delete('/demandes/{demande}', [DemandeController::class, 'destroy'])->name('demandes.destroy');
-
     // Nos offres
     Route::get('/offers', [PaymentController::class, 'showListOffers'])->name('offers');
 
@@ -55,7 +54,6 @@ Route::middleware('auth')->group(function () {
 
     // Analyses premium 
     Route::get('/personal-test/form', [PaymentController::class, 'personal-test'])->name('personal-test.form');
-
 
     // Profile
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -1,27 +1,56 @@
-# GuardAI - Protection contre les Discriminations de l'IA
+# GuardAI App - Protection contre les Discriminations de l'IA
 
 ## Description du Projet
-GuardAI est un site web offrant une solution novatrice pour se protéger des discriminations potentielles perpétrées par les systèmes d'intelligence artificielle (IA). Notre plateforme vise à sensibiliser, éduquer et fournir des outils pour lutter contre les biais algorithmiques et les préjugés injustes dans les applications d'IA, tout en fournissant des solutions et des analyses personnalisées. 
+GuardAI est un site vitrine dédié à l'analyse des systèmes d'intelligence artificielle. Il permet aux utilisateurs de détecter et de se prémunir contre les biais discriminatoires présents dans les IA, tout en offrant des solutions aux entreprises pour corriger leurs systèmes.
 
 ## Fonctionnalités
-- Analyse des modèles d'IA pour détecter les biais et les discriminations.
-- Fourniture de rapports détaillés sur les résultats de l'analyse.
-- Ressources sur les biais algorithmiques et les impacts sociaux de l'IA.
-- Possibilité de soumettre des modèles d'IA pour analyse.
+- Reporting d'analyse : Les utilisateurs peuvent consulter des rapports d'analyse détaillant les biais identifiés dans différents systèmes d'intelligence artificielle.
+- Comparatif des notes d'IA : Comparer les systèmes d'IA en fonction de leurs notes sur différents critères de performance et d'équité.
+- Demande d'analyse privée : Option permettant aux utilisateurs et aux entreprises de demander des analyses spécifiques sur des IA, avec un accès privilégié pour les entreprises.
+- Abonnement payant : Intégration de Stripe pour la gestion des abonnements. Les abonnés peuvent soumettre leurs propres jeux de données pour tester les biais des IA.
+- Page de conseils : Conseils pratiques sur la manière d'utiliser les IA de manière éthique et responsable.
+- Gestion de profil : Système d'inscription et de connexion pour accéder à des fonctionnalités personnalisées.
 
 ## Technologies Utilisées
-- Frontend: HTML, CSS, JavaScript, Laravel,/Chart.js
-- Backend: Laravel
-- Base de donnée: mysql,
-- Analyse des Données: Bibliothèques Python spécialisées dans le traitement des données et l'analyse des modèles d'IA. ( a vérifier)
+- Laravel 11 : Framework PHP utilisé pour la gestion du backend.
+- Blade : Moteur de template utilisé pour la génération des vues côté serveur.
+- Breeze : Package Laravel utilisé pour la gestion de l'authentification (connexion/inscription).
+- MySQL : Base de données utilisée pour stocker les utilisateurs, les rapports d'analyses, les abonnements, etc.
+- Stripe : Utilisé pour gérer les paiements des abonnements payants.
 
-## Utilisation depuis le dépôt Github
-1. Cloner le dépôt GitHub : `git clone https://github.com/repo/GuardAI.git`
-2. Accéder au répertoire du projet : `cd GuardAI`
-3. Installer les dépendances : `pip install -r requirements.txt`
-4. Lancer l'application : `python app.py`
-5. Accéder au site via votre navigateur web à l'adresse : [http://localhost:5000](http://localhost:5000)
+##  Prérequis
+    Avant de commencer, assurez-vous d'avoir installé :
+
+    - PHP >= 8.1
+    - Composer
+    - Node.js & npm
+    - MySQL
 
 ## TODO Avant de Lancer l'Application
+<<<<<<< HEAD
 Avant de lancer l'application, veuillez vous assurer de :
 - ( à remplir ) uihk
+=======
+- Installation
+    Clonez le dépôt sur votre machine locale :
+    git clone https://github.com/votre-utilisateur/guardai-app.git
+    cd guardai-app
+
+- Installez les dépendances PHP avec Composer :
+    composer install
+
+- Installez les dépendances JavaScript avec npm :
+    npm install
+    
+- Copiez le fichier .env.example en .env et configurez les variables d'environnement (base de données, Stripe, etc.) :
+    cp .env.example .env
+    php artisan key:generate
+
+- Mettez en place la base de données MySQL et exécutez les migrations :
+
+    php artisan migrate
+- Utilisation
+Lancer le serveur Laravel :
+    - php artisan serve
+    - npm run dev
+>>>>>>> 733c7c2b75661aeb25fff508fe33e614d62c8690
